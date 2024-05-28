@@ -1,0 +1,12 @@
+I_f=[0.5 0.55 0.6 0.65 0.7 0.75];
+T=[1726 1809 1901 1975 2059 2136];
+p=polyfit(I_f,T,1);
+disp('线性拟合的结果为：');
+disp(['y = ', num2str(p(1)), ' * x + ', num2str(p(2))]);
+y_fit = polyval(p, I_f);
+figure;
+plot(I_f, T, 'o');
+hold on;
+plot(I_f, y_fit, '-');
+legend('原始数据', '线性拟合结果');
+hold off;
